@@ -1,0 +1,197 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  svg {
+    overflow: visible;
+  }
+  svg path#line {
+    fill: none;
+    stroke: #e00000;
+    stroke-width: 2;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+    stroke-dasharray:none;
+    stroke-opacity: 1;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 4s linear infinite;
+  }
+  svg path#heart {
+    transform-origin: 50% 50%;
+    animation: blink 4s linear infinite;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    80% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    60% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    70% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.0);
+    }
+  }
+
+
+
+
+/* html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  } */
+  
+  
+  
+  .center {
+    padding-top: 50vh;
+  }
+  
+  .heart-rate {
+    transform: scale(1.5);
+    width: 160px;
+    height: 80px;
+    position: relative;
+    margin: -40px auto 0;
+    overflow: hidden;
+  }
+  
+  .fadeIn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    animation: heartRateIn 2.5s linear infinite;
+  }
+  
+  .fadeOut {
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    top: 0;
+    left: -120%;
+    animation: heartRateOut 2.5s linear infinite;
+    background: #fff;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  
+  @keyframes heartRateIn {
+    0% {
+      width: 100%;
+    }
+    50% {
+      width: 0;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes heartRateOut {
+    0% {
+      left: -120%;
+    }
+    30% {
+      left: -120%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .heart-rate {
+      transform: scale(1);
+    }
+  }
+  
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .button:hover {
+    background-color: #ec848b;
+    box-shadow: 0px 15px 20px rgba(226, 104, 137, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+
+.center {
+    display: flex;
+}
+
+.wrap {
+    display: flex;
+}
+
+#svg5 {
+    display: none;
+}
